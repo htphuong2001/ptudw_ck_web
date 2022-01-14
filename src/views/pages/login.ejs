@@ -2,7 +2,7 @@
 <div class="container">
   <form class="form" action="/login" method="post">
     <div class="title">Login</div>
-    <% if(error_msg){ %>
+    <% if(error_msg) { %>
     <div class="msg-form error"><%= error_msg %></div>
     <% } %> <% if(success_msg){ %>
     <div class="msg-form success"><%= success_msg %></div>
@@ -19,7 +19,7 @@
       <button type="submit">Login</button>
     </div>
     <div class="form-submit">
-      <a href="/auth/facebook">
+      <a href="/login/facebook">
         <i class="bx bxl-facebook-square"></i>
         Login with Facebook
       </a>

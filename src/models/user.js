@@ -19,9 +19,11 @@ const UserSchema = new Schema({
   },
   fullname: {
     type: String,
+    default: "",
   },
   address: {
     type: String,
+    default: "",
   },
   is_lock: {
     type: Boolean,

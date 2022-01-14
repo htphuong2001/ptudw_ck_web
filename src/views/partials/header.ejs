@@ -17,14 +17,26 @@
       <li>
         <a href="/cart"><i class="bx bx-cart-alt"></i> cart</a>
       </li>
+      <% if (user) { %>
       <li>
-        <a href="/login"><i class="bx bx-log-in"></i> login</a>
+        <a href="/profile"><i class="bx bx-user"></i>Profile</a>
       </li>
+      <li>
+        <a href="/logout">
+          <i class="bx bx-log-out"></i> <span>logout</span>
+        </a>
+      </li>
+      <% } else { %>
       <li>
         <a href="/register">
           <i class="bx bxs-user-plus"></i> <span>register</span>
         </a>
       </li>
+      <li>
+        <a href="/login"><i class="bx bx-log-in"></i> login</a>
+      </li>
+
+      <% } %>
     </ul>
   </div>
   <i class="bx bx-menu" id="btn-menu"></i>

@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
     secret: "htp-epic",
-    cookie: { maxAge: 1000 * 60 },
+    cookie: { maxAge: 1000 * 60 * 60 },
     saveUninitialized: true,
     resave: true,
   })
