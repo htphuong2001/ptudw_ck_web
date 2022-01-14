@@ -20,7 +20,9 @@
   "homepage": "https://github.com/htphuong2001/ptudw_ck_web#readme",
   "dependencies": {
     "dotenv": "^11.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.2",
+    "express-ejs-layouts": "^2.5.1",
     "http-errors": "^2.0.0",
     "nodemon": "^2.0.15"
   }
