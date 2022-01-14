@@ -1,0 +1,27 @@
+{
+  "name": "ptudw_ck_web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htphuong2001/ptudw_ck_web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/htphuong2001/ptudw_ck_web/issues"
+  },
+  "homepage": "https://github.com/htphuong2001/ptudw_ck_web#readme",
+  "dependencies": {
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "http-errors": "^2.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
