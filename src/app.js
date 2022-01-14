@@ -5,6 +5,7 @@ const createError = require("http-errors");
 const logger = require("morgan");
 const session = require("express-session");
 const flash = require("connect-flash");
+const passport = require("passport");
 
 require("dotenv").config();
 
@@ -23,12 +24,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
     secret: "htp-epic",
-    cookie: { maxAge: 60000 },
+    cookie: { maxAge: 1000 * 60 },
     saveUninitialized: true,
     resave: true,
   })
 );
 app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Static file
 app.use("/assets", express.static(path.join(__dirname, "public")));
