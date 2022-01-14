@@ -2,9 +2,14 @@
 <div class="container">
   <form class="form" action="/register" method="post">
     <div class="title">Register</div>
+    <% if(error_msg){ %>
+    <div class="msg-form error"><%= error_msg %></div>
+    <% } %> <% if(success_msg){ %>
+    <div class="msg-form success"><%= success_msg %></div>
+    <% } %>
     <div class="form-field">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" />
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" />
     </div>
     <div class="form-field">
       <label for="password">Password:</label>

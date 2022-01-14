@@ -192,11 +192,18 @@ li {
   margin: 0 auto;
 }
 
-.mess-form {
+.msg-form {
   width: 100%;
   text-align: center;
-  color: #c70039;
   font-size: 1.4rem;
+}
+
+.msg-form.error {
+  color: #c70039;
+}
+
+.msg-form.success {
+  color: aqua;
 }
 
 .form .title {
