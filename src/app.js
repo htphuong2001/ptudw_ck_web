@@ -9,6 +9,9 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 8000;
 
+// Connect db
+require("./config/connect_mongodb").connect();
+
 // Logger
 app.use(logger("dev"));
 
