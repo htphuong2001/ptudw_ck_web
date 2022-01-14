@@ -4,7 +4,7 @@ const { userValidate } = require("../config/validation");
 const getRegisterPage = async (req, res, next) => {
   res.locals.error_msg = req.flash("error_msg");
   res.locals.success_msg = req.flash("success_msg");
-  res.render("pages/register");
+  res.render("pages/register", { isAuth: req.isAuthenticated() });
 };
 
 const register = async (req, res, next) => {

@@ -51,7 +51,7 @@ UserSchema.methods.isCheckPassword = async function (password) {
   try {
     return await bcrypt.compare(password, this.password);
   } catch (error) {
-    next(error);
+    throw error;
   }
 };
 

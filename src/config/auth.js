@@ -3,7 +3,6 @@ const isAuth = async (req, res, next) => {
     req.flash("message", "You don't authenticate");
     res.redirect("/login");
   }
-  res.locals.user = req.user;
   next();
 };
 
