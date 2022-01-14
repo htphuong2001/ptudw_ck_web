@@ -12,6 +12,9 @@ const port = process.env.PORT || 8000;
 // Logger
 app.use(logger("dev"));
 
+// Static file
+app.use("/assets", express.static(path.join(__dirname, "public")));
+
 // EJS engine
 app.use(expressLayouts);
 app.set("view engine", "ejs");
