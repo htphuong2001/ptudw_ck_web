@@ -13,6 +13,8 @@ html {
 body {
   background: #1c1c1c;
   color: #f5f5f5;
+  min-height: 100vh;
+  position: relative;
 }
 
 a {
@@ -174,7 +176,6 @@ li {
 /* Page */
 .main {
   margin-top: 70px;
-  padding: 0;
 }
 
 /* Register Login */
@@ -388,6 +389,49 @@ li {
   background: aquamarine;
   border: none;
   border-radius: 4px;
+}
+
+/* Slide */
+.slider .slide-img {
+  display: none;
+  position: relative;
+}
+
+.slider .slide-img.active {
+  display: block;
+}
+
+.slider .slide-img img {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  max-height: 500px;
+  aspect-ratio: 2/1;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.slider .slide-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.slider .slide-nav .box {
+  padding: 0;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider .slide-nav .box.active {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(245, 245, 245);
+  box-shadow: rgb(255 255 255 / 10%) 0px 0px 0px 3px;
 }
 
 @media screen and (max-width: 1024px) {
