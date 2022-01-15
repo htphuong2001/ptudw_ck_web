@@ -30,7 +30,16 @@ module.exports = (passport) => {
           }
 
           const user = await User.findOne({ username });
-          if (!user || !user.isCheckPassword()) {
+          if (!user) {
+            return done(
+              null,
+              false,
+              req.flash("error_msg", "Wrong account or password")
+            );
+          }
+
+          const isValid = await user.isCheckPassword(password);
+          if (!isValid) {
             return done(
               null,
               false,

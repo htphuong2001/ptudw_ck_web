@@ -5,7 +5,7 @@ const getLoginPage = async (req, res, next) => {
 };
 
 const login = async (req, res, next) => {
-  res.redirect("/");
+  res.redirect("/profile");
 };
 
 module.exports = {

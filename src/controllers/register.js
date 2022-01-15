@@ -34,7 +34,7 @@ const register = async (req, res, next) => {
       password,
     });
     req.flash("success_msg", "Register success. Let's login");
-    res.redirect("/");
+    res.redirect("/login");
   } catch (err) {
     next(err);
   }

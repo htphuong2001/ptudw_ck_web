@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+const passport = require("passport");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -35,13 +36,24 @@ const UserSchema = new Schema({
   },
 });
 
-UserSchema.pre("save", async function (next) {
+UserSchema.pre(/^(save|findOneAndUpdate)/, async function (next) {
   try {
-    if (this.password) {
+    const user = this;
+    if (user.password) {
       const salt = await bcrypt.genSalt(10);
-      const hashPassword = await bcrypt.hash(this.password, salt);
-      this.password = hashPassword;
+      const hashPassword = await bcrypt.hash(user.password, salt);
+      user.password = hashPassword;
+      return next();
     }
+
+    const { password } = user.getUpdate();
+    if (password) {
+      const salt = await bcrypt.genSalt(10);
+      const hashPassword = await bcrypt.hash(password, salt);
+      user._update.password = hashPassword;
+    }
+
+    next();
   } catch (error) {
     next(error);
   }

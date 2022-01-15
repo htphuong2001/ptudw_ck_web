@@ -24,11 +24,6 @@ li {
   list-style-type: none;
 }
 
-.container {
-  width: 100%;
-  padding-top: 40px;
-}
-
 /* Header */
 .header {
   position: fixed;
@@ -183,7 +178,11 @@ li {
 }
 
 /* Register Login */
-.form {
+.rl {
+  padding-top: 30px;
+}
+
+.rl .form {
   max-width: 400px;
   padding: 5px 10px 10px;
   background-color: #2a2a2a;
@@ -192,21 +191,21 @@ li {
   margin: 0 auto;
 }
 
-.msg-form {
+.rl .msg-form {
   width: 100%;
   text-align: center;
   font-size: 1.4rem;
 }
 
-.msg-form.error {
+.rl .msg-form.error {
   color: #c70039;
 }
 
-.msg-form.success {
+.rl .msg-form.success {
   color: aqua;
 }
 
-.form .title {
+.rl .form .title {
   text-align: center;
   font-size: 2.4rem;
   font-weight: 500;
@@ -214,19 +213,19 @@ li {
   padding: 10px 0;
 }
 
-.form-field {
+.rl .form-field {
   display: flex;
   flex-direction: column;
   margin: 10px;
 }
 
-.form-field label {
+.rl .form-field label {
   font-size: 1.6rem;
   padding-left: 5px;
   margin-bottom: 8px;
 }
 
-.form-field input {
+.rl .form-field input {
   border: none;
   outline: none;
   background-color: #1c1c1c;
@@ -236,14 +235,14 @@ li {
   border-radius: 4px;
 }
 
-.form-submit {
+.rl .form-submit {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
 }
 
-.form-submit button,
-.form-submit a {
+.rl .form-submit button,
+.rl .form-submit a {
   width: 80%;
   display: inline-flex;
   padding: 6px 18px 8px;
@@ -259,14 +258,136 @@ li {
   cursor: pointer;
 }
 
-.form-submit a i {
+.rl .form-submit a i {
   font-size: 2.2rem;
   margin-right: 10px;
 }
 
-.form-submit button:hover,
-.form-submit a:hover {
+.rl .form-submit button:hover,
+.rl .form-submit a:hover {
   opacity: 0.8;
+}
+
+/* Profile */
+.profile {
+  padding-top: 30px;
+}
+
+.profile .msg {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.profile .msg.error {
+  color: #c70039;
+}
+
+.profile .msg.success {
+  color: aqua;
+}
+
+.profile .row {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.profile form {
+  width: 40%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile form .form-field {
+  display: flex;
+  align-items: center;
+  margin: 20px 10px;
+}
+
+.profile form .form-field label {
+  width: 80px;
+  font-size: 1.4rem;
+  margin-right: 20px;
+}
+
+.profile form .form-field input {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #202020;
+  padding: 8px 12px;
+  font-size: 1.5rem;
+  border-radius: 4px;
+}
+
+.profile .form-submit {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.profile .form-submit button {
+  width: 150px;
+  display: inline-flex;
+  padding: 6px 18px 8px;
+  border: none;
+  background-color: #0078f2;
+  color: #f5f5f5 !important;
+  font-size: 1.6rem;
+  border-radius: 4px;
+  line-height: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  cursor: pointer;
+}
+
+.profile .action {
+  margin-top: 30px;
+  min-width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.profile .action a {
+  padding: 8px 18px;
+  background: blueviolet;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+#changePassword .form-field {
+  margin: 10px 20px;
+  color: #202020;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+#changePassword .form-field label {
+  width: 120px;
+  margin-right: 10px;
+  justify-content: space-between;
+}
+
+#changePassword .form-field input {
+  padding: 4px 10px;
+  outline: none;
+  width: 60%;
+}
+
+#changePassword .form-submit {
+  padding-top: 10px;
+  text-align: center;
+}
+
+#changePassword .form-submit button {
+  padding: 5px 15px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  background: aquamarine;
+  border: none;
+  border-radius: 4px;
 }
 
 @media screen and (max-width: 1024px) {

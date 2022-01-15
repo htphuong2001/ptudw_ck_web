@@ -1,0 +1,72 @@
+<%- contentFor('css_body') %>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"
+/>
+
+<%- contentFor('body') %>
+<div class="container profile">
+  <% if(error_msg.length != 0) { %>
+  <div class="msg error"><%= error_msg %></div>
+  <% } %> <% if(success_msg.length != 0){ %>
+  <div class="msg success"><%= success_msg %></div>
+  <% } %>
+  <div class="row">
+    <form action="/profile/update" method="post">
+      <div class="form-field">
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          disabled
+          value="<%= user.username %> "
+        />
+      </div>
+      <div class="form-field">
+        <label for="fullname">Fullname:</label>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          value="<%= user.fullname %> "
+        />
+      </div>
+      <div class="form-field">
+        <label for="address">Address:</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          value="<%= user.address %>"
+        />
+      </div>
+      <div class="form-submit">
+        <button type="submit">Update</button>
+      </div>
+    </form>
+    <div class="action">
+      <a href="#changePassword" rel="modal:open">Change password</a>
+      <a>Order</a>
+    </div>
+  </div>
+</div>
+
+<div id="changePassword" class="modal">
+  <form action="/profile/change-password" method="post">
+    <div class="form-field">
+      <label for="oldPassword">Old password:</label>
+      <input type="password" name="oldPassword" id="oldPassword" />
+    </div>
+    <div class="form-field">
+      <label for="newPassword">New password:</label>
+      <input type="password" name="newPassword" id="newPassword" />
+    </div>
+    <div class="form-submit">
+      <button type="submit">Update</button>
+    </div>
+  </form>
+</div>
+
+<%- contentFor('js_body') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>

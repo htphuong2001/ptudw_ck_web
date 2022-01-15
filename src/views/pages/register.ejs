@@ -1,5 +1,5 @@
-<%- contentFor('body') %>
-<div class="container">
+<%- contentFor('css_body') %> <%- contentFor('body') %>
+<div class="container rl">
   <form class="form" action="/register" method="post">
     <div class="title">Register</div>
     <% if(error_msg){ %>
@@ -24,3 +24,5 @@
     </div>
   </form>
 </div>
+
+<%- contentFor('js_body') %>
