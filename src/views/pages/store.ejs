@@ -1,7 +1,117 @@
 <%- contentFor('css_body') %> <%- contentFor('body') %>
 <div class="container">
   <%- include('../partials/slide'); -%>
-  <div class="store"></div>
+
+  <section class="main-body">
+    <div class="store">
+      <div class="products">
+        <div class="sort">
+          <div class="select">
+            <span>sort by:</span>
+            <select>
+              <option value="1">new release</option>
+              <option value="3">alphabetical</option>
+              <option value="2">price: low to high</option>
+              <option value="2">price: high to low</option>
+            </select>
+          </div>
+        </div>
+        <div class="product-list row">
+          <div class="col-3">
+            <a href="#" class="product-card">
+              <div class="img">
+                <img src="/assets/img/game1.jpg" alt="" />
+              </div>
+              <div class="info">
+                <p class="name">among us</p>
+                <p class="price">40000 đ</p>
+              </div>
+              <button><i class="bx bxs-cart-add"></i> Add to cart</button>
+            </a>
+          </div>
+          <div class="col-3">
+            <a href="#" class="product-card">
+              <div class="img">
+                <img src="/assets/img/game1.jpg" alt="" />
+              </div>
+              <div class="info">
+                <p class="name">among us</p>
+                <p class="price">40000 đ</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-3">
+            <a href="#" class="product-card">
+              <div class="img">
+                <img src="/assets/img/game1.jpg" alt="" />
+              </div>
+              <div class="info">
+                <p class="name">among us</p>
+                <p class="price">40000 đ</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-3">
+            <a href="#" class="product-card">
+              <div class="img">
+                <img src="/assets/img/game1.jpg" alt="" />
+              </div>
+              <div class="info">
+                <p class="name">among us</p>
+                <p class="price">40000 đ</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-3">
+            <a href="#" class="product-card">
+              <div class="img">
+                <img src="/assets/img/game1.jpg" alt="" />
+              </div>
+              <div class="info">
+                <p class="name">among us</p>
+                <p class="price">40000 đ</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="page">
+          <button><i class="bx bx-chevron-left"></i></button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+          <button><i class="bx bx-chevron-right"></i></button>
+        </div>
+      </div>
+      <form class="filter">
+        <h3 class="title">Filter</h3>
+        <p>Genre <i class="bx bx-chevron-down"></i></p>
+        <div class="tag">
+          <label for="action">action</label>
+          <input type="checkbox" id="action" name="tag" value="action" />
+        </div>
+        <div class="tag">
+          <label for="indie">indie</label>
+          <input type="checkbox" id="indie" name="tag" value="indie" />
+        </div>
+        <div class="tag">
+          <label for="adventure">adventure</label>
+          <input type="checkbox" id="adventure" name="tag" value="adventure" />
+        </div>
+        <p>platform <i class="bx bx-chevron-down"></i></p>
+        <div class="tag">
+          <label for="windows">windows</label>
+          <input type="checkbox" id="windows" name="tag" value="windows" />
+        </div>
+        <div class="tag">
+          <label for="macos">macos</label>
+          <input type="checkbox" id="macos" name="tag" value="macos" />
+        </div>
+        <button type="submit">Accept</button>
+      </form>
+    </div>
+  </section>
 </div>
 
 <%- contentFor('js_body') %>

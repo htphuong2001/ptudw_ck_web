@@ -1,4 +1,13 @@
-<%- contentFor('css_body') %> <%- contentFor('body') %>
+<%- contentFor('css_body') %>
+<style>
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+</style>
+<%- contentFor('body') %>
 <div class="container rl">
   <form class="form" action="/register" method="post">
     <div class="title">Register</div>
