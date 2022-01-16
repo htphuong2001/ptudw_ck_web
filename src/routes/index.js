@@ -4,6 +4,7 @@ const registerRouter = require("./register");
 const loginRouter = require("./login");
 const profileRouter = require("./profile");
 const storeRouter = require("./store");
+const cartRouter = require("./cart");
 
 const { getHomePage, logout } = require("../controllers/index");
 
@@ -15,4 +16,5 @@ module.exports = (app) => {
   app.use("/login", loginRouter);
   app.use("/profile", isAuth, profileRouter);
   app.use("/store", storeRouter);
+  app.use("/cart", cartRouter);
 };

@@ -1,8 +1,8 @@
 function renderProducts(products) {
   let html = "";
   products.forEach((product) => {
-    html += `<div class="col-12 col-md-6 col-lg-4 col-xl-3">
-              <a href="/product/${product._id}" class="product-card">
+    html += `<div class="col-12 col-md-6 col-lg-4 col-xl-3 product-card-container">
+              <a href="/store/${product._id}" class="product-card">
                 <div class="img">
                   <img src="${product.img}" alt="" />
                 </div>
@@ -10,8 +10,8 @@ function renderProducts(products) {
                   <p class="name">${product.name}</p>
                   <p class="price">${product.price}</p>
                 </div>
-                <button><i class="bx bxs-cart-add"></i> Add to cart</button>
               </a>
+              <button id="${product._id}"><i class="bx bxs-cart-add"></i> Add to cart</button>
             </div>`;
   });
   return html;

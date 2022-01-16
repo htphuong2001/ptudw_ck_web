@@ -517,9 +517,15 @@ li {
   text-transform: capitalize;
 }
 
+.store .products .product-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .store .products .product-card {
-  height: 100%;
-  display: block;
+  /* height: 80%; */
   padding: 5px;
   color: #a1a1a1;
   text-transform: capitalize;
@@ -527,7 +533,6 @@ li {
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .store .products .product-card .img {
@@ -550,7 +555,7 @@ li {
   margin-top: 5px;
 }
 
-.store .products .product-card button {
+.store .products .product-list button {
   margin: 10px 20px;
   padding: 5px 10px;
   color: #f2f2f2;
@@ -650,6 +655,103 @@ li {
   color: #f2f2f2;
   border: none;
   cursor: pointer;
+}
+
+/* Cart */
+
+.cart-page {
+  padding: 30px 20px 0;
+}
+
+.cart-page .title {
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #a1a1a1;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.cart-page .content {
+  margin-top: 20px;
+  background-color: #2a2a2a;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #a1a1a1;
+}
+
+.cart-page .content .product.title {
+  height: 40px;
+  text-align: start;
+}
+
+.cart-page .content .product {
+  height: 75px;
+  padding: 5px 10px 10px;
+  border-bottom: 1px solid #a1a1a1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #a1a1a1;
+}
+
+.cart-page .content .product .img {
+  display: flex;
+  align-items: center;
+  width: 80px;
+  height: 100%;
+}
+
+.cart-page .content .product button {
+  border: none;
+  background: crimson;
+  color: #f2f2f2;
+  font-size: 2rem;
+  padding: 2px 1px 0;
+  cursor: pointer;
+}
+
+.cart-page .content .product .img img {
+  height: 100%;
+  margin: 0 20px;
+}
+
+.cart-page .content .product .name {
+  flex-grow: 1;
+  margin-left: 30px;
+}
+
+.cart-page .content .product .price,
+.cart-page .content .product .discount,
+.cart-page .content .product .sum {
+  width: 15%;
+  min-width: 60px;
+  text-align: end;
+}
+
+.cart-page .content .total-cart {
+  padding: 0 10px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  color: chocolate;
+}
+
+.cart-page .content .check-out {
+  text-align: end;
+  padding: 0 10px;
+  margin-top: 20px;
+}
+
+.cart-page .content .check-out button {
+  padding: 8px 20px;
+  background: chocolate;
+  color: #f5f5f5;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 1024px) {

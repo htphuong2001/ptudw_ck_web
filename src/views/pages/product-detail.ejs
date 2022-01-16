@@ -22,10 +22,28 @@
         <span><%= product.price * (1 - product.discount) %></span>
       </div>
       <div class="action">
-        <button>Add to cart</button>
+        <button id="<%= product._id %>">Add to cart</button>
       </div>
     </div>
   </div>
 </div>
 
 <%- contentFor('js_body') %>
+<script>
+  $(document).ready(function () {
+    $(document).on("click", ".product-detail .sub-info button", function () {
+      console.log($(this));
+      let id = $(this).attr("id");
+      let cart = localStorage.getItem("epic-cart");
+      if (cart) {
+        cart = JSON.parse(cart);
+        if (!cart.includes(id)) {
+          cart.push(id);
+        }
+      } else {
+        cart = [id];
+      }
+      localStorage.setItem("epic-cart", JSON.stringify(cart));
+    });
+  });
+</script>

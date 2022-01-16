@@ -29,6 +29,7 @@ const getStorePage = async (req, res, next) => {
 
 const getStoreAjax = async (req, res, next) => {
   try {
+    let sumPage;
     const { _page, _tag, _sort } = req.body;
     console.log(_tag);
     const [sortCol, sortType] = _sort.split("|");
@@ -42,14 +43,16 @@ const getStoreAjax = async (req, res, next) => {
         });
       });
       products = listFilter.slice((_page - 1) * 12, _page * 12);
+      sumPage = listFilter.length;
     } else {
       console.log("no");
       products = recordsTotal.slice((_page - 1) * 12, _page * 12);
+      sumPage = recordsTotal.length;
     }
 
     const opt = {
       page: _page,
-      totalPage: Math.ceil(recordsTotal.length / 12),
+      totalPage: Math.ceil(sumPage / 12),
     };
 
     res.send({ products, opt });

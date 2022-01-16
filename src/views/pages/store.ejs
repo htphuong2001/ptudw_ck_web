@@ -20,7 +20,7 @@
         <div class="product-list row" id="product-list">
           <% products.forEach(function(product){ %>
           <!-- product -->
-          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3 product-card-container">
             <%-include('../partials/product', {product}); %>
           </div>
           <% }); %>
@@ -59,3 +59,20 @@
 <%- contentFor('js_body') %>
 
 <script src="/assets/js/page-product.js"></script>
+<script>
+  $(document).ready(function () {
+    $(document).on("click", ".product-card-container button", function () {
+      let id = $(this).attr("id");
+      let cart = localStorage.getItem("epic-cart");
+      if (cart) {
+        cart = JSON.parse(cart);
+        if (!cart.includes(id)) {
+          cart.push(id);
+        }
+      } else {
+        cart = [id];
+      }
+      localStorage.setItem("epic-cart", JSON.stringify(cart));
+    });
+  });
+</script>
