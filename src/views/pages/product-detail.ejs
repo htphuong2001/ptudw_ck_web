@@ -1,0 +1,31 @@
+<%- contentFor('css_body') %> <%- contentFor('body') %>
+<div class="container">
+  <div class="product-detail">
+    <div class="main-info">
+      <div class="title"><%= product.name %></div>
+
+      <img src="<%= product.img %>" alt="" />
+    </div>
+    <div class="sub-info">
+      <div class="des">Description: <br /><br /><%= product.des %></div>
+      <div class="tag">
+        <span>Tag: </span> <span><%= product.tags.map(tag => tag.name) %></span>
+      </div>
+      <div class="price">
+        <span>Price: </span> <span><%= product.price %></span>
+      </div>
+      <div class="discount">
+        <span>Discount: </span> <span><%= product.discount * 100 %>%</span>
+      </div>
+      <div class="result">
+        <span>Result: </span>
+        <span><%= product.price * (1 - product.discount) %></span>
+      </div>
+      <div class="action">
+        <button>Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- contentFor('js_body') %>

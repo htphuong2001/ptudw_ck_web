@@ -1,7 +1,6 @@
 const Tag = require("../models/Tag");
 const Product = require("../models/product");
 const Category = require("../models/category");
-const ejs = require("ejs");
 
 const getStorePage = async (req, res, next) => {
   try {
@@ -42,7 +41,6 @@ const getStoreAjax = async (req, res, next) => {
           return tags.includes(tag);
         });
       });
-      //console.log(listFilter);
       products = listFilter.slice((_page - 1) * 12, _page * 12);
     } else {
       console.log("no");
@@ -60,4 +58,18 @@ const getStoreAjax = async (req, res, next) => {
   }
 };
 
-module.exports = { getStorePage, getStoreAjax };
+const getProductDetail = async (req, res, next) => {
+  try {
+    const { productId } = req.params;
+
+    const product = await Product.findById(productId).populate("tags", "name");
+    res.render("pages/product-detail", {
+      isAuth: req.isAuthenticated(),
+      product,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { getStorePage, getStoreAjax, getProductDetail };

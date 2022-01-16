@@ -584,6 +584,74 @@ li {
   font-size: 2rem;
 }
 
+.product-detail {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-detail .main-info {
+  width: 30%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-detail .main-info .title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #f2f2f2;
+  width: 100%;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+}
+
+.product-detail .main-info img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-detail .sub-info {
+  width: 50%;
+  min-width: 300px;
+  margin-top: 40px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  color: #a1a1a1;
+}
+
+.product-detail .sub-info > * {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #a1a1a1;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-detail .sub-info .des {
+  border-bottom: none;
+  padding: 5px 0;
+  text-align: justify;
+}
+
+.product-detail .sub-info .action {
+  border-bottom: none;
+  justify-content: end;
+  margin-top: 20px;
+}
+
+.product-detail .sub-info .action button {
+  padding: 8px 24px;
+  font-size: 1.6rem;
+  background-color: #0078f2;
+  color: #f2f2f2;
+  border: none;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1024px) {
   #btn-menu {
     display: block;
