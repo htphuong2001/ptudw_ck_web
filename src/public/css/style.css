@@ -518,14 +518,16 @@ li {
 }
 
 .store .products .product-card {
+  height: 100%;
   display: block;
   padding: 5px;
   color: #a1a1a1;
   text-transform: capitalize;
   font-size: 1.4rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .store .products .product-card .img {
@@ -535,7 +537,7 @@ li {
 
 .store .products .product-card .img img {
   width: 100%;
-  object-fit: cover;
+  aspect-ratio: 3 / 4;
   border-radius: 10px;
 }
 
@@ -556,6 +558,7 @@ li {
   border: none;
   font-size: 1.4rem;
   cursor: pointer;
+  margin-bottom: 30px;
 }
 
 .store .products .page {
@@ -571,6 +574,10 @@ li {
   color: #a1a1a1;
   border: none;
   cursor: pointer;
+}
+
+.store .products .page .active {
+  background-color: #0078f2;
 }
 
 .store .products .page i {
