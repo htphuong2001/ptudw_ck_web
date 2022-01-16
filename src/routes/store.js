@@ -13,8 +13,8 @@ router.get("/", getStorePage);
 
 router.post("/ajax", getStoreAjax);
 
-router.get("/:productId", getProductDetail);
-
 router.get("/search", searchProduct);
+
+router.get("/:productId", getProductDetail);
 
 module.exports = router;

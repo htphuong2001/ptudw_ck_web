@@ -78,7 +78,29 @@ const getProductDetail = async (req, res, next) => {
 const searchProduct = async (req, res, next) => {
   try {
     const { search } = req.query;
-  } catch (error) {}
+    const tags = await Tag.find({});
+    const categories = await Category.find({});
+    const recordsTotal = await Product.find({
+      name: { $regex: search, $options: "i" },
+    }).sort({ release: "desc" });
+
+    const products = recordsTotal.slice(0, 12);
+
+    const opt = {
+      page: 1,
+      totalPage: Math.ceil(recordsTotal.length / 12),
+    };
+
+    res.render("pages/store", {
+      isAuth: req.isAuthenticated(),
+      products,
+      categories,
+      tags,
+      opt,
+    });
+  } catch (error) {
+    next(error);
+  }
 };
 
 module.exports = {

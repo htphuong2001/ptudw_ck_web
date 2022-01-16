@@ -1,1 +1,48 @@
-<%- contentFor('css_body') %> Home <%- contentFor('js_body') %>
+<%- contentFor('css_body') %> <%- contentFor('body') %>
+<div class="container">
+  <%- include('../partials/slide'); -%>
+
+  <section class="main-body">
+    <div class="home-page">
+      <div class="list-products">
+        <div class="title">- New release -</div>
+        <div class="row">
+          <% newRelease.forEach(function(product){ %>
+          <!-- product -->
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3 product-card-container">
+            <%-include('../partials/product', {product}); %>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+      <div class="title">- Best sale -</div>
+      <div class="row">
+        <% bestSale.forEach(function(product){ %>
+        <!-- product -->
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3 product-card-container">
+          <%-include('../partials/product', {product}); %>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </section>
+</div>
+
+<%- contentFor('js_body') %>
+<script>
+  $(document).ready(function () {
+    $(document).on("click", ".product-card-container button", function () {
+      let id = $(this).attr("id");
+      let cart = localStorage.getItem("epic-cart");
+      if (cart) {
+        cart = JSON.parse(cart);
+        if (!cart.includes(id)) {
+          cart.push(id);
+        }
+      } else {
+        cart = [id];
+      }
+      localStorage.setItem("epic-cart", JSON.stringify(cart));
+    });
+  });
+</script>
