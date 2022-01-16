@@ -22,18 +22,19 @@ function renderCart(products) {
   });
 
   html += `<div class="total-cart">
-              <span>Total:</span><span>${total}</span>
+              <span>Total:</span><span id="total-order">${total}</span>
           </div>
           <div class="check-out">
             <button>CHECKOUT</button>
-          </div>`;
+          </div>
+          <div class="msg-check-out"> </div>`;
 
   return html;
 }
 
 function loadCart() {
   const listProduct = JSON.parse(localStorage.getItem("epic-cart"));
-  if (listProduct) {
+  if (listProduct && listProduct.length > 0) {
     $.ajax({
       type: "POST",
       url: "/cart/ajax",
@@ -58,5 +59,30 @@ $(document).ready(function () {
     const products = listProduct.filter((id) => id != idRemove);
     localStorage.setItem("epic-cart", JSON.stringify(products));
     loadCart();
+  });
+});
+
+$(document).ready(function () {
+  $(document).on("click", ".cart-page .content .check-out button", function () {
+    const listProduct = JSON.parse(localStorage.getItem("epic-cart"));
+    $.ajax({
+      type: "POST",
+      url: "/order/check-out",
+      data: {
+        products: listProduct,
+        totalBill: $("#total-order").text(),
+      },
+    }).done(function (data) {
+      const { status, message, notLogin, order } = data;
+      if (notLogin) {
+        window.location.replace("/login");
+      }
+      if (status) {
+        $(".cart-page .content .msg-check-out").text(message);
+        localStorage.setItem("epic-cart", JSON.stringify([]));
+      } else {
+        $(".cart-page .content .msg-check-out").text(message);
+      }
+    });
   });
 });

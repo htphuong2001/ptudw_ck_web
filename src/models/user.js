@@ -22,9 +22,9 @@ const UserSchema = new Schema({
     type: String,
     default: "",
   },
-  address: {
+  email: {
     type: String,
-    default: "",
+    default: null,
   },
   is_lock: {
     type: Boolean,

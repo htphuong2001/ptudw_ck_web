@@ -75,4 +75,15 @@ const getProductDetail = async (req, res, next) => {
   }
 };
 
-module.exports = { getStorePage, getStoreAjax, getProductDetail };
+const searchProduct = async (req, res, next) => {
+  try {
+    const { search } = req.query;
+  } catch (error) {}
+};
+
+module.exports = {
+  getStorePage,
+  getStoreAjax,
+  getProductDetail,
+  searchProduct,
+};

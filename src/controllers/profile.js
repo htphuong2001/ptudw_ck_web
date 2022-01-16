@@ -12,9 +12,9 @@ const getProfilePage = async (req, res, next) => {
 const updateProfile = async (req, res, next) => {
   try {
     const { username } = req.user;
-    const { fullname, address } = req.body;
+    const { fullname, email } = req.body;
 
-    await User.findOneAndUpdate({ username }, { fullname, address });
+    await User.findOneAndUpdate({ username }, { fullname, email });
     res.redirect("/profile");
   } catch (err) {
     next(err);
