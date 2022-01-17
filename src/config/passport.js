@@ -77,6 +77,10 @@ module.exports = (passport) => {
           try {
             const user = await User.findOne({ username: profile.id });
             if (user) {
+              const { is_lock } = user;
+              if (is_lock) {
+                return done(null, false);
+              }
               return done(null, user);
             }
 
